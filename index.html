@@ -1,39 +1,101 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
+    <title>Yanzhi (E) Yang — Designer & Animator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我的网站</h1>
-        <p>这是我的个人作品集</p>
-    </header>
-    
+
     <nav>
-        <a href="#about">关于我</a>
-        <a href="#projects">项目</a>
-        <a href="#contact">联系方式</a>
+        <div class="nav-inner">
+            <span class="nav-logo">Yanzhi (E) Yang</span>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
     </nav>
 
+    <header id="hero">
+        <div class="hero-inner">
+            <p class="hero-tag">Designer & Animator</p>
+            <h1>Yanzhi (E) Yang</h1>
+            <p class="hero-sub">Games, Health &amp; Aging</p>
+            <p class="hero-bio">"I use animation and interactive design to make complex topics — health, aging, memory — feel human and accessible."</p>
+            <a href="#work" class="btn-primary">View Work</a>
+        </div>
+    </header>
+
     <section id="about">
-        <h2>关于我</h2>
-        <p>这里写你的介绍...</p>
+        <div class="section-inner">
+            <h2>About</h2>
+            <p>I'm a designer and animator focused on the intersection of storytelling, health communication, and human-centered interaction. My work spans game design, motion graphics, and research-backed interactive experiences — all aimed at making meaningful topics approachable and engaging.</p>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>我的项目</h2>
-        <div class="project">
-            <h3>项目1</h3>
-            <p>项目描述</p>
+    <section id="work">
+        <div class="section-inner">
+            <h2>Selected Work</h2>
+            <div class="projects-grid">
+
+                <div class="project-card featured">
+                    <div class="project-meta">
+                        <span class="tag">Bone Health · Accessible Design · Thesis</span>
+                        <span class="award">🥇 Featured</span>
+                    </div>
+                    <h3>OsVita</h3>
+                    <p>An accessible design system for bone health and aging populations. Directed as a thesis project with a complete interactive prototype — the most direct connection to longevity-focused design in this portfolio.</p>
+                    <span class="project-type">Case Study</span>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span class="tag">Health Intervention · Game Design</span>
+                        <span class="award">🥈 CHI 2026</span>
+                    </div>
+                    <h3>Breath of Life</h3>
+                    <p>A breathing intervention delivered through game design, published at CHI 2026. Demonstrates not just visual craft but a deep understanding of health intervention logic and behavioral change.</p>
+                    <span class="project-type">Research + Game</span>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span class="tag">Aging · Memory · Narrative Game</span>
+                        <span class="award">🥉 Steam · Award-Winning</span>
+                    </div>
+                    <h3>Shui's Odyssey</h3>
+                    <p>An award-winning narrative game about an elderly protagonist's memory and life journey. Available on Steam with real users — a proven project with a natural connection to aging storytelling.</p>
+                    <span class="project-type">Narrative Game</span>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">
+                        <span class="tag">Animation · Cultural · Viral</span>
+                        <span class="award">3.4M Views</span>
+                    </div>
+                    <h3>Lu Xun Animation</h3>
+                    <p>An animated short about the iconic Chinese author Lu Xun, reaching 3.4 million views. Demonstrates the ability to translate complex cultural and literary themes into compelling motion work.</p>
+                    <span class="project-type">Animation</span>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>联系方式</h2>
-        <p>邮箱：你的邮箱@gmail.com</p>
+        <div class="section-inner contact-inner">
+            <h2>Let's Connect</h2>
+            <p>Open to design roles, collaborations, and conversations about health, games, and aging.</p>
+            <a href="mailto:hello@yanzhiyang.com" class="btn-primary">hello@yanzhiyang.com</a>
+        </div>
     </section>
+
+    <footer>
+        <p>© 2026 Yanzhi (E) Yang</p>
+    </footer>
+
 </body>
 </html>
