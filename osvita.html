@@ -447,8 +447,82 @@
   .fade-in:nth-child(2) { animation-delay: 0.25s; }
   .fade-in:nth-child(3) { animation-delay: 0.4s; }
 
+  /* ── VISUAL DIRECTIONS ── */
+  .vd-section {
+    padding: 80px 48px;
+    background: var(--slate);
+  }
+  .vd-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .vd-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--blue-muted); margin-bottom: 16px;
+  }
+  .vd-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px; color: var(--cream); line-height: 1.2;
+    letter-spacing: -0.01em; margin-bottom: 20px;
+  }
+  .vd-desc {
+    font-size: 15px; line-height: 1.8; color: rgba(245,240,232,0.65);
+    font-weight: 300; margin-bottom: 40px;
+  }
+  .vd-toggle {
+    display: inline-flex;
+    border: 1px solid rgba(245,240,232,0.2);
+    border-radius: 8px; overflow: hidden;
+  }
+  .toggle-btn {
+    padding: 10px 28px;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer;
+    border: none; background: transparent;
+    color: rgba(245,240,232,0.45);
+    transition: background 0.25s, color 0.25s;
+  }
+  .toggle-btn.active {
+    background: var(--blue-soft);
+    color: var(--white);
+  }
+  .vd-phones {
+    display: grid;
+  }
+  .phone-stack {
+    grid-column: 1; grid-row: 1;
+    display: flex; align-items: flex-start;
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .phone-stack.hidden {
+    opacity: 0; pointer-events: none;
+    transform: translateY(18px);
+  }
+  .phone-img {
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 24px 56px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+  }
+  .phone-img img { width: 100%; display: block; }
+  .phone-img.back {
+    width: 54%;
+    margin-right: -18%; margin-top: 52px;
+    transform: rotate(-5deg);
+    position: relative; z-index: 1;
+    box-shadow: -8px 20px 48px rgba(0,0,0,0.4);
+  }
+  .phone-img.front {
+    width: 54%;
+    position: relative; z-index: 2;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
+    .vd-section { padding: 56px 24px; }
+    .vd-inner { grid-template-columns: 1fr; gap: 48px; }
+    .vd-phones { max-width: 300px; margin: 0 auto; }
+  }
     nav { padding: 16px 24px; }
     .hero { grid-template-columns: 1fr; padding: 120px 24px 64px; gap: 48px; }
     .overview-inner { grid-template-columns: 1fr; }
@@ -645,40 +719,32 @@
 </section>
 
 <!-- VISUAL DIRECTIONS -->
-<div class="screenshot-section">
-  <div class="screenshot-inner">
-    <div class="screenshot-header">
-      <span class="section-num" style="color:var(--blue-muted);">—</span>
-      <h2>Two Design Directions</h2>
-    </div>
-    <p class="screenshot-desc">Two complete visual explorations — dark and light — each applied across the home screen and workout session. Both directions were prepared for user testing to let real preferences guide the final choice.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
-      <div>
-        <p class="screenshot-caption" style="margin-bottom:10px;">Home Screen · Dark</p>
-        <div class="screenshot-frame">
-          <img src="Image/MainMenu_Dark.png" alt="OsVita home screen — dark mode" />
-        </div>
-      </div>
-      <div>
-        <p class="screenshot-caption" style="margin-bottom:10px;">Home Screen · Light</p>
-        <div class="screenshot-frame">
-          <img src="Image/MainMenu_Bright.png" alt="OsVita home screen — light mode" />
-        </div>
+<div class="vd-section">
+  <div class="vd-inner">
+    <div class="vd-left">
+      <div class="vd-label">Design Direction</div>
+      <h2 class="vd-title">Two visual directions,<br>one design decision.</h2>
+      <p class="vd-desc">A warm cartoonish palette and a clean modern direction — both fully developed across the home screen and workout session, ready for ethnographic testing with real users to determine the final direction.</p>
+      <div class="vd-toggle">
+        <button class="toggle-btn active" data-theme="dark">Dark</button>
+        <button class="toggle-btn" data-theme="light">Light</button>
       </div>
     </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div>
-        <p class="screenshot-caption" style="margin-bottom:10px;">Workout Session · Dark</p>
-        <div class="screenshot-frame">
-          <img src="Image/Workout_Dark.png" alt="OsVita workout session — dark mode" />
+    <div class="vd-phones">
+      <div class="phone-stack" data-theme="dark">
+        <div class="phone-img back">
+          <img src="Image/MainMenu_Dark.png" alt="Home screen — dark" />
+        </div>
+        <div class="phone-img front">
+          <img src="Image/Workout_Dark.png" alt="Workout session — dark" />
         </div>
       </div>
-      <div>
-        <p class="screenshot-caption" style="margin-bottom:10px;">Workout Session · Light</p>
-        <div class="screenshot-frame">
-          <img src="Image/Workout_Bright.png" alt="OsVita workout session — light mode" />
+      <div class="phone-stack hidden" data-theme="light">
+        <div class="phone-img back">
+          <img src="Image/MainMenu_Bright.png" alt="Home screen — light" />
+        </div>
+        <div class="phone-img front">
+          <img src="Image/Workout_Bright.png" alt="Workout session — light" />
         </div>
       </div>
     </div>
@@ -832,6 +898,18 @@
       }
     });
   }, { threshold: 0.12 });
+
+  // Dark / Light toggle
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const theme = this.dataset.theme;
+      document.querySelectorAll('.phone-stack').forEach(stack => {
+        stack.classList.toggle('hidden', stack.dataset.theme !== theme);
+      });
+    });
+  });
 
   document.querySelectorAll('.problem-card, .role-card, .feature-card, .process-step, .principle, .outcome-item').forEach(el => {
     el.style.opacity = '0';
