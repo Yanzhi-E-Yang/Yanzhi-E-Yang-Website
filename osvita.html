@@ -486,6 +486,8 @@
     width: 26px; height: 26px; border-radius: 50%;
     cursor: pointer; border: 2px solid transparent;
     padding: 0; outline: none;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; line-height: 1;
     transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
   }
   .toggle-btn[data-theme="dark"] {
@@ -739,15 +741,15 @@
       <h2 class="vd-title">Two visual directions,<br>one design decision.</h2>
       <p class="vd-desc">A warm cartoonish palette and a clean modern direction — both fully developed across the home screen and workout session, ready for ethnographic testing with real users to determine the final direction.</p>
       <div class="vd-toggle">
-        <span class="toggle-label">color</span>
+        <span class="toggle-label">Theme</span>
         <div class="toggle-circles">
-          <button class="toggle-btn active" data-theme="dark" aria-label="Dark"></button>
-          <button class="toggle-btn" data-theme="light" aria-label="Light"></button>
+          <button class="toggle-btn" data-theme="dark" aria-label="Dark">🌙</button>
+          <button class="toggle-btn active" data-theme="light" aria-label="Light">☀️</button>
         </div>
       </div>
     </div>
     <div class="vd-phones">
-      <div class="phone-stack" data-theme="dark">
+      <div class="phone-stack hidden" data-theme="dark">
         <div class="phone-img back">
           <img src="Image/MainMenu_Dark.png" alt="Home screen — dark" />
         </div>
@@ -755,7 +757,7 @@
           <img src="Image/Workout_Dark.png" alt="Workout session — dark" />
         </div>
       </div>
-      <div class="phone-stack hidden" data-theme="light">
+      <div class="phone-stack" data-theme="light">
         <div class="phone-img back">
           <img src="Image/MainMenu_Bright.png" alt="Home screen — light" />
         </div>
